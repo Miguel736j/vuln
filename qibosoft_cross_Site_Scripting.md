@@ -60,3 +60,6 @@ if($starttijd&&$eindtijd){
 
 ### Source Code:
 http://down.qibosoft.com/down.php?v=v7
+
+
+### Discoverd by Mohammed Alorf
